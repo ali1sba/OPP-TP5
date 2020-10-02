@@ -51,6 +51,15 @@ class Formation {
     }
 
     //q3
+    // for get
+      for (int i = 0 , i < listeEtudient.size , i++){
+        Etudient x = listeEtudient.get();
+        if (x.equals(name)){
+            list.add(x)
+        }
+    }
+
+    //iterator
     List <Etudient> trouver (String name){
         LinkedList <Etudient> list = new LinkedList<Etudient>();
         Iterator <Etudient> iterator = listeEtudient.iterator();
@@ -60,6 +69,14 @@ class Formation {
                     list.addLast(e);
                 }
         }
+
+        //for each
+        for ( Etudient etd : listeEtudient){
+            if (etd.getNom() == name) {
+                list.addLast(etd);
+            }
+        }
+
 
 
         return list ;
@@ -107,13 +124,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Formation java = new Formation("azert");
+        Formation javaformation = new Formation("azert");
 
-        java.addEtudient(new Etudient("ali",1));
-        java.addEtudient(new Etudient("karim",2));
-        java.addEtudient(new Etudient("mohamed",3));
-        java.addEtudient(new Etudient("dalah",4));
-        java.addEtudient(new Etudient("sarar",5));
+        javaformation.addEtudient(new Etudient("ali",1));
+        javaformation.addEtudient(new Etudient("karim",2));
+        javaformation.addEtudient(new Etudient("mohamed",3));
+        javaformation.addEtudient(new Etudient("ali",4));
+        javaformation.addEtudient(new Etudient("sarar",5));
+
+
+        javaformation.trouver("ali");
+
 
     }
 }
